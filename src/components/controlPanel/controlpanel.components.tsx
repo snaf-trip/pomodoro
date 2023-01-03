@@ -1,4 +1,5 @@
 import React, { Dispatch } from 'react';
+import './controlpanel.components.scss';
 
 interface Props {
   timeLeft: number;
@@ -26,10 +27,16 @@ export const ControlPanel = ({
   };
 
   return (
-    <>
-      <button onClick={startTimer}>start</button>
-      <button onClick={pauseTimer}>pause</button>
-      <button onClick={resetTimer}>reset</button>
-    </>
+    <div className="controlPanel">
+      <a className="controlPanel__button" onClick={startTimer}>
+        start
+      </a>
+      <a className="controlPanel__button" onClick={pauseTimer}>
+        pause
+      </a>
+      <a className="controlPanel__button" onClick={resetTimer}>
+        reset
+      </a>
+    </div>
   );
 };
