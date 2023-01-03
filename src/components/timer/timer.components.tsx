@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addPadTime } from '../../utils/timer/addPadTime.utils';
+import { ControlPanel } from '../controlPanel/controlpanel.components';
 
 export const Timer = (): JSX.Element => {
   const [timeLeft, setTimeLeft] = useState(25 * 60);
@@ -21,29 +22,16 @@ export const Timer = (): JSX.Element => {
     };
   }, [timeLeft, isCounting]);
 
-  const startTimer = () => {
-    if (timeLeft === 0) setTimeLeft(25);
-    setIsCounting(true);
-  };
-
-  const pauseTimer = () => {
-    setIsCounting(false);
-  };
-
-  const resetTimer = () => {
-    setIsCounting(false);
-    setTimeLeft(25 * 60);
-  };
-
   return (
     <>
-      <div>Timers</div>
       <span>
         {addPadTime(minutes)}:{addPadTime(seconds)}
       </span>
-      <button onClick={startTimer}>start</button>
-      <button onClick={pauseTimer}>pause</button>
-      <button onClick={resetTimer}>reset</button>
+      <ControlPanel
+        timeLeft={timeLeft}
+        setTimeLeft={setTimeLeft}
+        setIsCounting={setIsCounting}
+      />
     </>
   );
 };
