@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.scss';
 import './themesConfig.scss';
-import { Timer } from './components/timer.components';
+import { Timer } from './components/timer/timer.components';
 
 function App() {
   return (
