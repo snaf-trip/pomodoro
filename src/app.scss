@@ -1,0 +1,12 @@
+@import './themesConfig.scss';
+
+.app {
+  height: 100vh;
+  background-color: var(--app-background-color);
+
+  .app__container {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}

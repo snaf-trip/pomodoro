@@ -1,8 +1,16 @@
 import React from 'react';
-import './App.css';
+import './app.scss';
+import './themesConfig.scss';
+import { Timer } from './components/timer.components';
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="app">
+      <div className="app__container">
+        <Timer />
+      </div>
+    </div>
+  );
 }
 
 export default App;
