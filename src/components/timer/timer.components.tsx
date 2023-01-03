@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './timer.components.scss';
 import { addPadTime } from '../../utils/timer/addPadTime.utils';
 import { ControlPanel } from '../controlPanel/controlpanel.components';
 
@@ -24,9 +25,11 @@ export const Timer = (): JSX.Element => {
 
   return (
     <>
-      <span>
-        {addPadTime(minutes)}:{addPadTime(seconds)}
-      </span>
+      <div className="timeContainer">
+        <span className="timeContainer__time">{addPadTime(minutes)}</span>
+        <span className="timeContainer__time">{addPadTime(seconds)}</span>
+      </div>
+
       <ControlPanel
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
