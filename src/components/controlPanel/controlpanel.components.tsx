@@ -1,5 +1,10 @@
 import React, { Dispatch } from 'react';
 import './controlpanel.components.scss';
+import {
+  PauseIcon,
+  StartIcon,
+  SkipIcon,
+} from '../../img/controlPanel/export.conrolPanel.img';
 
 interface Props {
   timeLeft: number;
@@ -29,13 +34,13 @@ export const ControlPanel = ({
   return (
     <div className="controlPanel">
       <a className="controlPanel__button" onClick={startTimer}>
-        start
+        <StartIcon />
       </a>
       <a className="controlPanel__button" onClick={pauseTimer}>
-        pause
+        <PauseIcon />
       </a>
       <a className="controlPanel__button" onClick={resetTimer}>
-        reset
+        <SkipIcon />
       </a>
     </div>
   );
