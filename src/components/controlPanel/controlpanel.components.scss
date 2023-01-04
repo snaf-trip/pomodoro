@@ -2,14 +2,14 @@
 
 .controlPanel {
   display: flex;
-  gap: 10px;
+  gap: 1vh;
 
   .controlPanel__button {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--control-buttons-bg);
-    border-radius: 10px;
+    border-radius: calc(0.7vw + 0.7vh);
     width: 10vh;
     height: 10vh;
     cursor: pointer;
