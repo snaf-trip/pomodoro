@@ -9,12 +9,14 @@ import {
 interface Props {
   timeLeft: number;
   setTimeLeft: Dispatch<React.SetStateAction<number>>;
+  isCounting: boolean;
   setIsCounting: Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const ControlPanel = ({
   timeLeft,
   setTimeLeft,
+  isCounting,
   setIsCounting,
 }: Props): JSX.Element => {
   const startTimer = () => {
@@ -33,10 +35,20 @@ export const ControlPanel = ({
 
   return (
     <div className="controlPanel">
-      <a className="controlPanel__button" onClick={startTimer}>
+      <a
+        className={`controlPanel__button ${
+          isCounting && 'controlPanel__button_disable'
+        }`}
+        onClick={startTimer}
+      >
         <StartIcon />
       </a>
-      <a className="controlPanel__button" onClick={pauseTimer}>
+      <a
+        className={`controlPanel__button ${
+          !isCounting && 'controlPanel__button_disable'
+        }`}
+        onClick={pauseTimer}
+      >
         <PauseIcon />
       </a>
       <a className="controlPanel__button" onClick={resetTimer}>

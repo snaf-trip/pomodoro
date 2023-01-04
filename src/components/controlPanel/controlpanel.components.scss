@@ -17,5 +17,22 @@
     &:hover {
       background-color: var(--control-buttons-bg_hover);
     }
+
+    svg path{
+      fill: var(--control-buttons-icon);
+    }
+  }
+
+  .controlPanel__button_disable {
+    background-color: var(--control-buttons-bg_disable);
+    cursor: default;
+    
+    svg path{
+      fill: var(--control-buttons-icon_disable);
+    }
+
+    &:hover {
+      background-color: var(--control-buttons-bg_disable);
+    }
   }
 }

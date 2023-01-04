@@ -33,6 +33,7 @@ export const Timer = (): JSX.Element => {
       <ControlPanel
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
+        isCounting={isCounting}
         setIsCounting={setIsCounting}
       />
     </>
