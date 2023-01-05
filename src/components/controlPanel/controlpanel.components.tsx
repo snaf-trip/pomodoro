@@ -11,6 +11,8 @@ interface Props {
   setTimeLeft: Dispatch<React.SetStateAction<number>>;
   isCounting: boolean;
   setIsCounting: Dispatch<React.SetStateAction<boolean>>;
+  stage: number;
+  setStage: Dispatch<React.SetStateAction<number>>;
 }
 
 export const ControlPanel = ({
@@ -18,9 +20,10 @@ export const ControlPanel = ({
   setTimeLeft,
   isCounting,
   setIsCounting,
+  setStage,
+  stage,
 }: Props): JSX.Element => {
   const startTimer = () => {
-    if (timeLeft === 0) setTimeLeft(25);
     setIsCounting(true);
   };
 
@@ -30,7 +33,11 @@ export const ControlPanel = ({
 
   const resetTimer = () => {
     setIsCounting(false);
-    setTimeLeft(25 * 60);
+    if (stage === 8) {
+      setStage(1);
+    } else {
+      setStage((prev) => prev + 1);
+    }
   };
 
   return (
