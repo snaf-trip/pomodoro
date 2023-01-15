@@ -11,8 +11,8 @@ interface Props {
   setTimeLeft: Dispatch<React.SetStateAction<number>>;
   isCounting: boolean;
   setIsCounting: Dispatch<React.SetStateAction<boolean>>;
-  stage: number;
-  setStage: Dispatch<React.SetStateAction<number>>;
+  stage: number | undefined;
+  setStage: Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 export const ControlPanel = ({
@@ -36,7 +36,7 @@ export const ControlPanel = ({
     if (stage === 8) {
       setStage(1);
     } else {
-      setStage((prev) => prev + 1);
+      setStage((prev) => (prev !== undefined ? prev + 1 : undefined));
     }
   };
 

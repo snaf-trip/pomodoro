@@ -7,8 +7,8 @@ import { TimeSettings } from '../../types';
 
 interface Props {
   timeSettings: TimeSettings;
-  stage: number;
-  setStage: Dispatch<SetStateAction<number>>;
+  stage: number | undefined;
+  setStage: Dispatch<SetStateAction<number | undefined>>;
 }
 
 export const Timer = ({
@@ -40,7 +40,7 @@ export const Timer = ({
         if (stage === 8) {
           setStage(1);
         } else {
-          setStage((prev) => prev + 1);
+          setStage((prev) => (prev !== undefined ? prev + 1 : undefined));
         }
       }
     }
